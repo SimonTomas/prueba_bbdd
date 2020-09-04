@@ -11,7 +11,7 @@ CREATE TABLE clientes_facturas(cliente_id INT NOT NULL, factura_id INT NOT NULL,
 
 CREATE TABLE productos(id SERIAL PRIMARY KEY, nombre VARCHAR(100) NOT NULL, descripcion VARCHAR(150), valor_unitario INT NOT NULL);
 
-CREATE TABLE detalles(id SERIAL PRIMARY KEY, factura_id INT NOT NULL, producto_id INT NOT NULL, cantidad INT NOT NULL, FOREIGN KEY(factura_id) REFERENCES facturas(numero_de_factura), FOREIGN KEY(producto_id) REFERENCES productos(id));
+CREATE TABLE detalles(id SERIAL PRIMARY KEY, factura_id INT NOT NULL, producto_id INT NOT NULL, cantidad INT NOT NULL, valor_total_por_p INT NOT NULL, FOREIGN KEY(factura_id) REFERENCES facturas(numero_de_factura), FOREIGN KEY(producto_id) REFERENCES productos(id));
 
 CREATE TABLE categorias(id SERIAL PRIMARY KEY, nombre_categoria VARCHAR(80) NOT NULL UNIQUE, descripcion VARCHAR(150) NOT NULL);
 
@@ -211,30 +211,30 @@ INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(6,3);
 INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(7,3);
 
 -- INSERTAR DETALLES DE LAS FACTURAS
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(1,1,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(1,2,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(2,2,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(2,3,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(2,4,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(3,8,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(3,1,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(3,2,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(4,6,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(4,5,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(5,1,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(5,2,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(5,6,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(6,5,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(7,3,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(7,1,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(8,4,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(8,1,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(8,7,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,1,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,3,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,4,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,8,1);
-INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(10,5,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(1,1,1,5000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(1,2,1,2000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(2,2,1,2000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(2,3,1,6000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(2,4,1,6000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(3,8,1,20000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(3,1,1,5000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(3,2,1,2000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(4,6,1,300);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(4,5,1,50);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(5,1,1,5000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(5,2,1,2000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(5,6,1,300);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(6,5,1,50);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(7,3,1,6000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(7,1,1,5000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(8,4,1,6000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(8,1,1,5000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(8,7,1,500);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(9,1,1,5000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(9,3,1,6000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(9,4,1,6000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(9,8,1,20000);
+INSERT INTO detalles(factura_id,producto_id,cantidad, valor_total_por_p) VALUES(10,5,1,50);
 
 -- CONSULTA 1
 SELECT clientes.nombre FROM clientes
