@@ -235,3 +235,22 @@ INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,3,1);
 INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,4,1);
 INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,8,1);
 INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(10,5,1);
+
+-- CONSULTA 1
+SELECT clientes.nombre FROM clientes
+INNER JOIN clientes_facturas ON clientes.id = clientes_facturas.cliente_id
+INNER JOIN facturas ON clientes_facturas.factura_id = facturas.numero_de_factura
+WHERE precio_total = (SELECT precio_total FROM facturas ORDER BY precio_total DESC LIMIT 1);
+
+-- CONSULTA 2
+SELECT clientes.nombre FROM clientes
+INNER JOIN clientes_facturas ON clientes.id = clientes_facturas.cliente_id
+INNER JOIN facturas ON clientes_facturas.factura_id = facturas.numero_de_factura
+WHERE precio_total >= 100 GROUP BY clientes.nombre;
+
+-- CONSULTA 3
+SELECT COUNT(DISTINCT clientes) FROM clientes
+INNER JOIN clientes_facturas ON clientes.id = clientes_facturas.cliente_id
+INNER JOIN facturas ON facturas.numero_de_factura = clientes_facturas.factura_id
+INNER JOIN detalles ON facturas.numero_de_factura = detalles.factura_id
+WHERE producto_id = 6 GROUP BY clientes.nombre;
