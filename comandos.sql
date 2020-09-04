@@ -112,3 +112,78 @@ INSERT INTO categorias(nombre_categoria,descripcion) VALUES(
 'snacks',
 'asdsda'
 );
+
+-- CREAR 10 FACTURAS
+-- CLIENTE 1
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-08-27',
+7000,
+1330,
+8330
+);
+
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-08-28',
+14000,
+2660,
+16660
+);
+
+-- CLIENTE 2
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-08-25',
+27000,
+5130,
+32130
+);
+
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-08-23',
+350,
+66.5,
+416.5
+);
+
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-08-26',
+7300,
+1387,
+8687
+);
+
+-- CLIENTE 3
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-08-25',
+50,
+9.5,
+59.5
+);
+
+-- CLIENTE 4
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-09-01',
+11000,
+2090,
+13090
+);
+
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-08-30',
+11500,
+2185,
+13685
+);
+
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-09-02',
+37000,
+7030,
+44030
+);
+
+INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
+'2020-08-22',
+50,
+9.5,
+59.5
+);
