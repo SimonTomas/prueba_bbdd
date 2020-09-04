@@ -187,3 +187,51 @@ INSERT INTO facturas(fecha_de_factura,subtotal,iva,precio_total) VALUES(
 9.5,
 59.5
 );
+
+-- ENLAZAR CLIENTES CON FACTURAS
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(1,1);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(1,2);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(2,3);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(2,4);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(2,5);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(3,6);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(4,7);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(4,8);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(4,9);
+INSERT INTO clientes_facturas(cliente_id,factura_id) VALUES(4,10);
+
+-- ENLAZAR PRODUCTOS CON CATEGORIAS
+INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(1,1);
+INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(2,1);
+INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(3,2);
+INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(4,2);
+INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(8,2);
+INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(5,3);
+INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(6,3);
+INSERT INTO categorias_productos(producto_id,categoria_id) VALUES(7,3);
+
+-- INSERTAR DETALLES DE LAS FACTURAS
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(1,1,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(1,2,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(2,2,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(2,3,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(2,4,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(3,8,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(3,1,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(3,2,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(4,6,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(4,5,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(5,1,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(5,2,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(5,6,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(6,5,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(7,3,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(7,1,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(8,4,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(8,1,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(8,7,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,1,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,3,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,4,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(9,8,1);
+INSERT INTO detalles(factura_id,producto_id,cantidad) VALUES(10,5,1);
